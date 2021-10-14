@@ -19,11 +19,11 @@ class Control
                 if (!preg_match('/f13-lightbox-/i', $tag) && !preg_match('/no-lightbox/i', $tag)) {
                     if (!preg_match('/class=/i', $tag)) {
                         $the_pattern = $pattern;
-                        $tag_format = '<img class="f13-lightbox" data-f13-lightbox="'.$post->ID.'" data-f13-lightbox-sequence="'.$count.'" aria-label="Enlarge image '.$count.'" tabindex="0" $1>';
+                        $tag_format = '<img class="f13-lightbox" data-f13-lightbox="'.$post->ID.'" data-f13-lightbox-sequence="'.$count.'" aria-label="Enlarge image '.$count.'" $1>';
                     }
                     else {
                         $the_pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
-                        $tag_format = '<img$1class=$2$3 f13-lightbox$4$5 data-f13-lightbox="'.$post->ID.'" aria-label="Enlarge image '.$count.'" data-f13-lightbox-sequence="'.$count.'" tabindex="0">';
+                        $tag_format = '<img$1class=$2$3 f13-lightbox$4$5 data-f13-lightbox="'.$post->ID.'" aria-label="Enlarge image '.$count.'" data-f13-lightbox-sequence="'.$count.'">';
                     }
                     $count++;
                     $new_tag = preg_replace($the_pattern, $tag_format, $tag);
