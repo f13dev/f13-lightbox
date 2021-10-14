@@ -2,7 +2,7 @@
 #f13-lightbox-overlay { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgb(0,0,0,0.9); }
 #f13-lightbox-contaier { position: fixed; top: 0; bottom: 0; left: 0; right: 0; text-align: center; }
 #f13-lightbox-alt { position: fixed; bottom: 10px; right: 10px; left: 10px; padding: 10px; background: #222; color: #fff; border: 2px solid #dedad6; }
-#f13-lightbox-close, #f13-lightbox-next, #f13-lightbox-prev { opacity: 0.3; position: fixed; background: #fff; width: 34px; height: 34px; line-height: 34px; border-radius: 30px; top: 10px; right: 10px; font-size: 14px; font-weight: bold; cursor: pointer; border: 2px solid #222; }
+#f13-lightbox-close, #f13-lightbox-next, #f13-lightbox-prev { opacity: 0.6; position: fixed; background: #fff; width: 34px; height: 34px; line-height: 34px; border-radius: 30px; top: 10px; right: 10px; font-size: 14px; font-weight: bold; cursor: pointer; border: 2px solid #222; }
 #f13-lightbox-close:hover, #f13-lightbox-next:hover, #f13-lightbox-prev:hover { opacity: 1; }
 #f13-lightbox-close { top: 10px; right: 10px; background: url(../img/close.svg); }
 #f13-lightbox-next, #f13-lightbox-prev { font-size: 30px; line-height: 30px; }
