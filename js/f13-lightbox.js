@@ -50,7 +50,8 @@
         $('#f13-lightbox-next').data('sequence', next);
         $('#f13-lightbox-prev').data('sequence', prev);
         $('#f13-lightbox-image').attr('src', src);
-        $('#f13-lightbox-alt').html(caption(obj.attr('alt'), current, count)).attr('alt', obj.attr('alt'));
+        $('#f13-lightbox-alt').remove();
+        $('#f13-lightbox-container').append(caption(obj.attr('alt'), current, count));
     });
 
     $(document).keypress(function(e){
@@ -67,11 +68,11 @@
     });
 
     function caption(alt, current, count) {
-        var str = 'Image '+current+' of '+count;
+        var str = '<span id="f13-lightbox-alt" aria-live="alt" role="alert">Image '+current+' of '+count;
         if (alt == '') {
-            return str;
+            return str+'</span>';
         }
-        return str+' "'+alt+'"';
+        return str+' "'+alt+'"</span>';
     }
 
     function count_objects(obj) {
@@ -99,7 +100,7 @@
         var next = '<span id="f13-lightbox-next" class="f13-lightbox-nav f13-lightbox-controls" data-sequence="'+next_obj+'" title="Next" tabindex="0"></span>';
         var prev = '<span id="f13-lightbox-prev" class="f13-lightbox-nav f13-lightbox-controls" data-sequence="'+prev_obj+'" title="Previous" tabindex="0"></span>';
         var image = '<img id="f13-lightbox-image" aria-describedby="f13-lightbox-alt" alt="Enlarged" src="'+src+'" data-total="'+count+'" data-sequence="'+obj.data('f13-lightbox-sequence')+'">';
-        var alt = '<span id="f13-lightbox-alt">'+caption(obj.attr('alt'), obj.data('f13-lightbox-sequence'), count)+'</span>'
+        var alt = '<span id="f13-lightbox-alt" aria-live="alt" role="alert">'+caption(obj.attr('alt'), obj.data('f13-lightbox-sequence'), count)+'</span>'
         var container = '<div id="f13-lightbox-container">'+image+alt+close+next+prev+'</div>'
         var overlay = '<div id="f13-lightbox-overlay">'+container+'</div>';
         $('body').append(overlay);
