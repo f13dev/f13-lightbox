@@ -6,7 +6,7 @@
 #f13-lightbox-close:hover, #f13-lightbox-next:hover, #f13-lightbox-prev:hover { opacity: 1; }
 #f13-lightbox-close { top: 10px; right: 10px; background: url(../img/close.svg); }
 #f13-lightbox-next, #f13-lightbox-prev { font-size: 30px; line-height: 30px; }
-#f13-lightbox-next { top: calc(50% - 50px); right: 10px; background: url(../img/next.svg); }
-#f13-lightbox-prev { top: calc(50% - 50px); left: 10px; background: url(../img/prev.svg); }
+#f13-lightbox-next { top: calc(50% - 42px); right: 10px; background: url(../img/next.svg); }
+#f13-lightbox-prev { top: calc(50% - 42px); left: 10px; background: url(../img/prev.svg); }
 #f13-lightbox-container { text-align: center; vertical-align: middle; }
 #f13-lightbox-image { position: absolute; top: calc(50% - 25px); left: 50%; transform: translateX(-50%) translateY(-50%); max-width: calc(100% - 100px); max-height: calc(100% - 100px); border: 2px solid #dedad6; }

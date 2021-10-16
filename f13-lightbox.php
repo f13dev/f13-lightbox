@@ -46,8 +46,8 @@ class Plugin
 
     public function enqueue()
     {
-        wp_enqueue_style('f13-lightbox', F13_LIGHTBOX_URL.'css/f13-lightbox.css', array(), F13_LIGHTBOX_VERSION['version']);
-        wp_enqueue_script('f13-lightbox', F13_LIGHTBOX_URL.'js/f13-lightbox.js', array('jquery'), F13_LIGHTBOX_VERSION['version']);
+        wp_enqueue_style('f13-lightbox', F13_LIGHTBOX_URL.'css/f13-lightbox.css', array(), F13_LIGHTBOX['Version']);
+        wp_enqueue_script('f13-lightbox', F13_LIGHTBOX_URL.'js/f13-lightbox.js', array('jquery'), F13_LIGHTBOX['Version']);
     }
 }
 

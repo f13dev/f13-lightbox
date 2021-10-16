@@ -54,7 +54,7 @@
         $('#f13-lightbox-container').append(caption(obj.attr('alt'), current, count));
     });
 
-    $(document).keypress(function(e){
+    $(document).keydown(function(e){
         var keycode = (e.keyCode ? e.keyCode : e.which);
         if(keycode == '13'){
             var elem = $(':focus');
@@ -63,6 +63,17 @@
                 if (elem.hasClass('f13-lightbox')) {
                     clicked = elem;
                 }
+            }
+        }
+        if ($('#f13-lightbox-overlay').length) {
+            if (keycode == '39') { // Right key = next image
+                $('#f13-lightbox-next').click();
+            } else
+            if (keycode == '37') { // Left key = prev image
+                $('#f13-lightbox-prev').click();
+            } else
+            if (keycode == '27') { // Escape = close
+                $('#f13-lightbox-close').click();
             }
         }
     });
