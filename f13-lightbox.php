@@ -3,7 +3,7 @@
 Plugin Name: F13 Lightbox
 Plugin URI: https://f13.dev/wordpress-plugins/wordpress-plugin-lightbox/
 Description: Convert page/post content images to lightbox style links
-Version: 0.0.1
+Version: 1.0.0
 Author: Jim Valentine
 Author URI: https://f13.dev
 Text Domain: f13-lightbox
@@ -34,16 +34,16 @@ class Plugin
             return;
         }
         $file = str_replace(__NAMESPACE__, '', $name);
-        $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
+        $file = ltrim(str_replace('\\', DIRECTORY_SEPARATOR, $file), DIRECTORY_SEPARATOR);
         $file = plugin_dir_path(__FILE__).strtolower($file).'.php';
 
-        if (file_exists($file)) {
-            require_once $file;
+        if ($file !== realpath($file) || !file_exists($file)) {
+            wp_die('Class not found: '.htmlentities($name));
         } else {
-            die('Class not found: '.$name);
+            require_once $file;
         }
     }
-
+    
     public function enqueue()
     {
         wp_enqueue_style('f13-lightbox', F13_LIGHTBOX_URL.'css/f13-lightbox.css', array(), F13_LIGHTBOX['Version']);
