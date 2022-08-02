@@ -1,7 +1,15 @@
 (function($) {
     var clicked;
 
+    $(document).ajaxComplete(function() {
+        init();
+    });
+
     $(document).ready(function() {
+        init();
+    });
+
+    function init() {
         $('.f13-lightbox').each(function() {
             var a = $(this).parent();
             if (!a.is('a') && !a.attr('href')) {
@@ -9,8 +17,8 @@
             } else {
                 a.addClass('f13-lightbox-link');
             }
-        });
-    });
+        })
+    }
 
     $(document).on('click', '.f13-lightbox-link', function(e) {
         if ($(this).has('.f13-lightbox')) {
